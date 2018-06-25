@@ -43,8 +43,18 @@
         remote_src: yes
       become: yes
 
-    - copy:
+    - name: Copia o wp-config-sample
+      copy:
         src: '/var/www/wordpress/wp-config-sample.php'
         dest: /var/www/wordpress/wp-config.php
         remote_src: yes
       become: yes
+
+    - name: 'Configura o wp-config com as entradas de dados'
+      replace:
+        path: '/var/www/wordpress/wp-config.php'
+        regexp: ''
+        replace: '\1new.host.name\2'
+        backup: yes
+      with_items:
+        - {}
