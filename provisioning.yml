@@ -53,8 +53,11 @@
     - name: 'Configura o wp-config com as entradas de dados'
       replace:
         path: '/var/www/wordpress/wp-config.php'
-        regexp: ''
-        replace: '\1new.host.name\2'
+        regexp: "{{ item.regex }}"
+        replace: "{{ item.value }}"
         backup: yes
       with_items:
-        - {}
+        - { regex: 'database_name_here', value: 'wordpress_db'}
+        - { regex: 'username_here', value: 'wordpress_user'}
+        - { regex: 'password_here', value: '12345'}
+      become: yes
