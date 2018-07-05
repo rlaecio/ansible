@@ -1,8 +1,5 @@
-[wordpress_db]
+[wordpress]
 172.16.20.253
 
-<<<<<<< HEAD
-=======
-[database]
+[mysql]
 172.16.20.252
->>>>>>> work in handlers
