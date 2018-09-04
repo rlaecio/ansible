@@ -3,9 +3,7 @@
   roles:
     - mysql
 
-
 - hosts: wordpress
-    
   roles:
     - webserver
-  tasks:
+    - wordpress
