@@ -3,4 +3,3 @@ wp_username: wordpress_user
 wp_db_name: wordpress_db
 wp_user_password: '12345'
 wp_installation_dir: '/var/www/wordpress'
-wp_host_ip: '172.16.20.253'

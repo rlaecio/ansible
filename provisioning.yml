@@ -99,9 +99,9 @@
         - { regex: 'localhost', value: "{{ wp_db_ip }}"}
       become: yes
 
-    - name: Configura o apache para o wordpress
-      copy:
-        src: '000-default.conf'
+    - name: 'Configura o apache para o wordpress'
+      template:
+        src: 'templates/000-default.conf.j2'
         dest: '/etc/apache2/sites-available/000-default.conf'
       become: yes
       notify:
